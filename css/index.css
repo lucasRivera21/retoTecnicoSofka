@@ -1,0 +1,63 @@
+body{
+    background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75));
+    background-image: url("/img/espacio.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Joan', serif;
+    color: white;
+}
+h1{
+    text-align: center;
+}
+form{
+    border-radius: 4px;
+    background-position: center;
+    background-color: #182693;
+    padding: 5px;
+    padding-left: 20px;
+}
+.container{
+    background-color: #141527;
+    padding: 15px;  
+    border-radius: 4px;
+    margin: auto 25vw auto 25vw;
+    
+}
+.flex{
+    display: flex;
+    margin-top: 15px;
+}
+.flex label{
+    margin-right: 20px;
+}
+input{
+    padding-bottom: 5px;
+}
+.input{
+    width: 90%;
+    height: 20px;
+}
+
+
+#peso{
+    width: 30%;
+}
+.boton{
+    justify-content: center;
+    margin-bottom: 8px;
+    margin-left: -15px;
+}
+#boton{
+    background-color: #FF3200;
+    border-radius: 4px;
+    color: white;
+    width: 30%;
+    height: 40px;
+    font-size: 15px;
+    display: inline-block;
+}
+#boton:hover{
+    background-color: white;
+    color: #FF3200;
+}

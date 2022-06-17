@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naves</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <h1 id="titulo">Reto Técnico</h1>
+    <div class="container">
+        <form name="formulario" method="get" id="formulario">
+            <label for="name" class="flex">Nombre de la nave</label>
+            <input type="text" name="name" id="name" class="input" required>
+            
+            <div class="flex">
+                <input id="lanzadera" type="radio" name="tipo" value="lanzadera" required>
+                <label for="lanzadera">Vehículo lanzadera</label>
+                <input id="no-tripulado" type="radio" name="tipo" value="no-tripulado" required>
+                <label for="no-tripulado">Nave espacial no tripulada</label>
+                <input id="tripulado" type="radio" name="tipo" value="tripulado" required>
+                <label for="tripulado">Nave espacial tripulada</label>
+            </div>
+            
+            <label for="pais" class="flex">Pais de la nave</label>
+            <input id="pais" type="text" name="pais" class="input" required onchange="">
+
+            <label for="peso" class="flex">Peso de la nave en Kg</label>
+            <input id="peso" name="peso" type="number" class="input" required>
+
+            <label for="combustible" class="flex">Combustible de la nave</label>
+            <input id="combustible" name="combustible" type="text" class="input" required>
+
+            <div class="flex boton">
+                <input type="submit" name="boton" value="Crear" class="flex" id="boton">
+            </div>
+            
+        </form>
+    </div>
+    
+    <script src="./js/index.js"></script>
+</body>
+</html>
