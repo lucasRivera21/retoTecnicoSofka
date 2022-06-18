@@ -26,20 +26,21 @@ function captura(){
     
     let nave1 = new Nave(nombre, tipo, pais, peso, combustible);    //nave1 instanciada
 
+    //utilización del DOM 
     const infoNave = document.getElementById("navesContainer");
     const div = document.createElement("div");
     const nombreDiv = document.createElement("h3");
     const parrafoDiv = document.createElement("p");
-    const salto = document.createElement("br");
     
+    //estilos de la nave
     infoNave.style.backgroundColor = "#182693";
     infoNave.style.border = "#141527 10px solid";
-
     div.style.padding = "10px";
     div.style.borderBottom = "3px solid #141527"
 
     nombreDiv.textContent = nave1.nombre;
 
+    //tipo de nave
     if(nave1.tipo == "lanzadera"){
         nave1.tipo = "Vehículo lanzadera";
     }else if(nave1.tipo == "no-tripulado"){
@@ -55,7 +56,6 @@ function captura(){
     infoNave.appendChild(div);
     
     borrar();
-    
 }
 
 formulario.addEventListener('submit', (e) => {
@@ -72,7 +72,14 @@ class Nave{                             //plantilla nave
     }
 }
 
+const boton2 = document.getElementById('boton2');
 
+boton2.addEventListener("click", (e) => {
+    let valorBuscar = document.getElementById("buscar").value;
+    document.getElementById("buscar").value = "";
+
+    valorBuscar = valorBuscar.toUpperCase();    //convertir valor en mayúscula
+});
 
 
 

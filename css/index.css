@@ -10,7 +10,7 @@ body{
 h1{
     text-align: center;
 }
-form{
+#formulario{
     border-radius: 4px;
     background-position: center;
     background-color: #182693;
@@ -62,8 +62,27 @@ input{
     background-color: white;
     color: #FF3200;
 }
+#busqueda{
+    display: flex;
+    margin: 30px;
+    justify-content: center;
+}
+#formulario2{
+    margin-right: 10px;
+}
+#buscar{
+    border-radius: 4px;
+}
+#boton2{
+    background-color: #FF3200;
+    border-radius: 4px;
+    color: white;
+}
+#boton2:hover{
+    background-color: white;
+    color: #FF3200;
+}
+
 #navesContainer{
-    
-   
-    margin: 50px;
+    margin: 30px;
 }
