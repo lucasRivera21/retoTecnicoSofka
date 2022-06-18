@@ -37,6 +37,7 @@ input{
 .input{
     width: 90%;
     height: 20px;
+    border-radius: 4px;
 }
 
 
@@ -60,4 +61,9 @@ input{
 #boton:hover{
     background-color: white;
     color: #FF3200;
+}
+#navesContainer{
+    
+   
+    margin: 50px;
 }
