@@ -34,8 +34,6 @@ function captura(){
     const parrafoDiv = document.createElement("p");
     
     //estilos de la nave
-    infoNave.style.backgroundColor = "#182693";
-    infoNave.style.border = "#141527 10px solid";
     div.style.padding = "10px";
     div.style.borderBottom = "3px solid #141527"
 
@@ -52,8 +50,9 @@ function captura(){
 
     parrafoDiv.textContent = "TIPO: " + nave1.tipo + ",  PAIS: " + nave1.pais + ",  PESO: " + nave1.peso + "Kg ,  COMBUSTIBLE: " + nave1.combustible;
     
-    div.classList.toggle("nombreNave");   //Asignación de clase
+    div.classList.toggle("nave");   //Asignación de clase
 
+    //mostrar en HTML
     div.appendChild(nombreDiv);
     div.appendChild(parrafoDiv);
     infoNave.appendChild(div);
@@ -79,7 +78,7 @@ const buscar = document.getElementById('buscar');
 
 buscar.addEventListener("keyup", (e) => {
     if(e.target.matches("#buscar")){
-        document.querySelectorAll(".nombreNave").forEach(titulo => {
+        document.querySelectorAll(".nave").forEach(titulo => {
             titulo.textContent.toLowerCase().includes(e.target.value.toLowerCase())
                 ?titulo.classList.remove("filtro")
                 :titulo.classList.add("filtro")
@@ -88,56 +87,38 @@ buscar.addEventListener("keyup", (e) => {
     console.log(e.target.value);
 });
 
-let naveDefault1 = new Nave("Saturno V", "Vehiculo lanzadora", "EEUU", "3500000", "Hidrogeno");
+//creador de naves default
+function defecto(nombre, tipo, pais, peso, combustible){
+    let naveDefault = new Nave(nombre, tipo, pais, peso, combustible);
 
-const div = document.createElement("div");
-const nombreDiv = document.createElement("h3");
-const parrafoDiv = document.createElement("p");
-const infoNave = document.getElementById("navesContainer");
+    const div = document.createElement("div");
+    const nombreDiv = document.createElement("h3");
+    const parrafoDiv = document.createElement("p");
+    const infoNave = document.getElementById("navesContainer");
 
-infoNave.style.backgroundColor = "#182693";
-infoNave.style.border = "#141527 10px solid";
-div.style.padding = "10px";
-div.style.borderBottom = "3px solid #141527"
+    infoNave.style.backgroundColor = "#182693";
+    infoNave.style.border = "#141527 10px solid";
+    div.style.padding = "10px";
+    div.style.borderBottom = "3px solid #141527"
 
-nombreDiv.textContent = naveDefault1.nombre;
-parrafoDiv.textContent = "TIPO: " + naveDefault1.tipo + ",  PAIS: " + naveDefault1.pais + ",  PESO: " + naveDefault1.peso + "Kg ,  COMBUSTIBLE: " + naveDefault1.combustible;
+    nombreDiv.textContent = naveDefault.nombre;
+    parrafoDiv.textContent = "TIPO: " + naveDefault.tipo + ",  PAIS: " + naveDefault.pais + ",  PESO: " + naveDefault.peso + "Kg ,  COMBUSTIBLE: " + naveDefault.combustible;
 
-div.classList.toggle("nombreNave");
+    div.classList.toggle("nombreNave");
 
-div.appendChild(nombreDiv);
-div.appendChild(parrafoDiv);
-infoNave.appendChild(div);
-
-
-/*const formulario = document.getElementById('formulario');
-const inputs = document.querySelectorAll('#formulario input');
-
-console.log(inputs);
-
-const aux = inputs[1].value;
-
-const validarFormulario = (e) => {
-    switch(e.target.name){
-        case "pais":
-            console.log("funciona");
-        break;
-    }
+    div.appendChild(nombreDiv);
+    div.appendChild(parrafoDiv);
+    infoNave.appendChild(div);
 }
 
-inputs.forEach((input) => {
-    input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
-});
+//Nave 1
+defecto("Saturno V", "Vehiculo lanzadera", "EEUU", "3500000", "Hidrogeno");
 
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
-});
+//Nave 2
+defecto("Ariane V", "Vehiculo lanzadora", "Europa", "2400000", "Carbono");
 
-let bool = false;
+//nave 3
+defecto("Progreso M Sputnik", "Vehiculo no tripulado", "Rusia", "0,44", "Nitrogeno");
 
-
-
-/*boton.addEventListener("click", () => {
-    console.log("Hay click");
-})*/
+//nave 4
+defecto("Shenzou", "Vehiculo tripulado", "china", "420000", "Nitrogeno");

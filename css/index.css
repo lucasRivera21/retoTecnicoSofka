@@ -39,8 +39,6 @@ input{
     height: 20px;
     border-radius: 4px;
 }
-
-
 #peso{
     width: 30%;
 }
@@ -72,6 +70,7 @@ input{
 }
 #buscar{
     border-radius: 4px;
+    padding-bottom: 5px;
 }
 #navesContainer{
     margin: 30px;
