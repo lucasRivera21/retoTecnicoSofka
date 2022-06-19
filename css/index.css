@@ -73,16 +73,9 @@ input{
 #buscar{
     border-radius: 4px;
 }
-#boton2{
-    background-color: #FF3200;
-    border-radius: 4px;
-    color: white;
-}
-#boton2:hover{
-    background-color: white;
-    color: #FF3200;
-}
-
 #navesContainer{
     margin: 30px;
+}
+.filtro{
+    display: none;
 }

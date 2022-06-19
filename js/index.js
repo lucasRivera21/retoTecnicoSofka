@@ -6,6 +6,7 @@ function borrar(){                              //limpia los inputs
 }
 
 
+
 function captura(){
     var tipo;
     var nombre = document.getElementById("name").value;             //nombre de la nave
@@ -42,15 +43,17 @@ function captura(){
 
     //tipo de nave
     if(nave1.tipo == "lanzadera"){
-        nave1.tipo = "Vehículo lanzadera";
+        nave1.tipo = "Vehiculo lanzadera";
     }else if(nave1.tipo == "no-tripulado"){
-        nave1.tipo = "Vehículo no tripulado";
+        nave1.tipo = "Vehiculo no tripulado";
     }else{
-        nave1.tipo = "Vehículo tripulado";
+        nave1.tipo = "Vehiculo tripulado";
     }
 
     parrafoDiv.textContent = "TIPO: " + nave1.tipo + ",  PAIS: " + nave1.pais + ",  PESO: " + nave1.peso + "Kg ,  COMBUSTIBLE: " + nave1.combustible;
     
+    div.classList.toggle("nombreNave");   //Asignación de clase
+
     div.appendChild(nombreDiv);
     div.appendChild(parrafoDiv);
     infoNave.appendChild(div);
@@ -72,15 +75,39 @@ class Nave{                             //plantilla nave
     }
 }
 
-const boton2 = document.getElementById('boton2');
+const buscar = document.getElementById('buscar');
 
-boton2.addEventListener("click", (e) => {
-    let valorBuscar = document.getElementById("buscar").value;
-    document.getElementById("buscar").value = "";
-
-    valorBuscar = valorBuscar.toUpperCase();    //convertir valor en mayúscula
+buscar.addEventListener("keyup", (e) => {
+    if(e.target.matches("#buscar")){
+        document.querySelectorAll(".nombreNave").forEach(titulo => {
+            titulo.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+                ?titulo.classList.remove("filtro")
+                :titulo.classList.add("filtro")
+        })
+    }
+    console.log(e.target.value);
 });
 
+let naveDefault1 = new Nave("Saturno V", "Vehiculo lanzadora", "EEUU", "3500000", "Hidrogeno");
+
+const div = document.createElement("div");
+const nombreDiv = document.createElement("h3");
+const parrafoDiv = document.createElement("p");
+const infoNave = document.getElementById("navesContainer");
+
+infoNave.style.backgroundColor = "#182693";
+infoNave.style.border = "#141527 10px solid";
+div.style.padding = "10px";
+div.style.borderBottom = "3px solid #141527"
+
+nombreDiv.textContent = naveDefault1.nombre;
+parrafoDiv.textContent = "TIPO: " + naveDefault1.tipo + ",  PAIS: " + naveDefault1.pais + ",  PESO: " + naveDefault1.peso + "Kg ,  COMBUSTIBLE: " + naveDefault1.combustible;
+
+div.classList.toggle("nombreNave");
+
+div.appendChild(nombreDiv);
+div.appendChild(parrafoDiv);
+infoNave.appendChild(div);
 
 
 /*const formulario = document.getElementById('formulario');
