@@ -17,7 +17,6 @@ function captura(){
             tipo = elementos[i].value;
         }    
     }
-    console.log(document.getElementsByName("tipo").value);
 
     var pais = document.getElementById("pais").value;               //pais de origen de la nave
     var peso = document.getElementById("peso").value;               //peso de la nave
@@ -74,8 +73,9 @@ class Nave{                             //plantilla nave
     }
 }
 
-const buscar = document.getElementById('buscar');
+const buscar = document.getElementById('buscar');   //input busqueda
 
+//busqueda
 buscar.addEventListener("keyup", (e) => {
     if(e.target.matches("#buscar")){
         document.querySelectorAll(".nave").forEach(titulo => {
@@ -104,21 +104,17 @@ function defecto(nombre, tipo, pais, peso, combustible){
     nombreDiv.textContent = naveDefault.nombre;
     parrafoDiv.textContent = "TIPO: " + naveDefault.tipo + ",  PAIS: " + naveDefault.pais + ",  PESO: " + naveDefault.peso + "Kg ,  COMBUSTIBLE: " + naveDefault.combustible;
 
-    div.classList.toggle("nombreNave");
+    div.classList.toggle("nave");
 
     div.appendChild(nombreDiv);
     div.appendChild(parrafoDiv);
     infoNave.appendChild(div);
 }
 
-//Nave 1
-defecto("Saturno V", "Vehiculo lanzadera", "EEUU", "3500000", "Hidrogeno");
+defecto("Saturno V", "Vehiculo lanzadera", "EEUU", "3500000", "Hidrogeno");//Nave 1
 
-//Nave 2
-defecto("Ariane V", "Vehiculo lanzadora", "Europa", "2400000", "Carbono");
+defecto("Ariane V", "Vehiculo lanzadora", "Europa", "2400000", "Carbono");//Nave 2
 
-//nave 3
-defecto("Progreso M Sputnik", "Vehiculo no tripulado", "Rusia", "0,44", "Nitrogeno");
+defecto("Progreso M Sputnik", "Vehiculo no tripulado", "Rusia", "0,44", "Nitrogeno");//Nave 3
 
-//nave 4
-defecto("Shenzou", "Vehiculo tripulado", "china", "420000", "Nitrogeno");
+defecto("Shenzou", "Vehiculo tripulado", "china", "420000", "Nitrogeno");//Nave 4
